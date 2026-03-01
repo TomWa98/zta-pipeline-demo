@@ -12,7 +12,7 @@ Dieses Dokument ist normativ für die weitere Implementierung.
 ---
 
 ## Logische Architektur der Demo
-
+```text
 +----------------------------+
 | Client / Fachanwendung     |
 | Header: X-Actor, X-Role    |
@@ -26,7 +26,7 @@ Dieses Dokument ist normativ für die weitere Implementierung.
 | - setzt Policy-Entscheidung durch   |
 | - schreibt Audit-Ereignisse         |
 +---------------+----------------------+
-                | Policy-Anfrage
+                |
                 v
         +----------------------+
         | policy.py (PDP)      |
@@ -34,13 +34,13 @@ Dieses Dokument ist normativ für die weitere Implementierung.
         |   Entscheidungslogik |
         +-----------+----------+
                     |
-                    | decision (allow/deny)
                     v
 +--------------------------------------+
 | SQLite                              |
 | - data_objects                      |
 | - audit_events (append-only)        |
 +--------------------------------------+
+```
 
 Hinweis:
 Die Demo instanziiert die zentrale Kontrolllogik (PDP/PEP/Audit), jedoch nicht die vollständigen Governance-, Infrastruktur- oder Kryptographie-Mechanismen der Referenzarchitektur.
