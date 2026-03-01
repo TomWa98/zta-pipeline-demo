@@ -94,6 +94,7 @@ scripts/ → Hilfsskripte (z. B. DB-Initialisierung)
 ```bash
 git clone git@github.com:TomWa98/zta-pipeline-demo.git
 cd zta-pipeline-demo
+```
 
 ### 2) Virtuelle Umgebung erstellen
 ```bash
