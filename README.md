@@ -36,14 +36,14 @@ Jede relevante Aktion wird revisionsfähig protokolliert.
 
 Die folgende Abbildung zeigt das vollständige konzeptionelle Referenzmodell.
 
-![alt text](reference-architecture.png)
+![Referenzarchitektur](reference-architecture.png)
 ---
 
 ## Instanziierung (Slim Demo-Architektur)
 
 Die folgende Abbildung zeigt die konkret instanziierten Kernmechanismen dieser Demo.
 
-> 📌 Platzhalter: Datei unter `docs/assets/demo_architecture.png` ablegen
+![Demo-Architektur](docs/assets/demo-architecture.png)
 
 ---
 
