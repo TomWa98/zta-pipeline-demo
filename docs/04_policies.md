@@ -109,11 +109,13 @@ Dann:
 
 Jede Policy-Entscheidung liefert exakt folgende Struktur zurück:
 
+```json
 {
   "decision": "allow" | "deny",
   "reason": "role_and_purpose_match" | "purpose_mismatch" | "role_not_allowed",
   "policy_version": "v1"
 }
+```
 
 Diese Struktur wird:
 
