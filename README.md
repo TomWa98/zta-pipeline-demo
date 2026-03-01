@@ -36,7 +36,7 @@ Jede relevante Aktion wird revisionsfähig protokolliert.
 
 Die folgende Abbildung zeigt das vollständige konzeptionelle Referenzmodell.
 
-![Referenzarchitektur](reference-architecture.png)
+![Referenzarchitektur](docs/assets/reference-architecture.png)
 ---
 
 ## Instanziierung (Slim Demo-Architektur)
@@ -91,21 +91,30 @@ scripts/ → Hilfsskripte (z. B. DB-Initialisierung)
 ## Setup
 
 ### 1) Repository klonen
+```bash
 git clone git@github.com:TomWa98/zta-pipeline-demo.git
 cd zta-pipeline-demo
 
 ### 2) Virtuelle Umgebung erstellen
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
+```
 
 ### 3) Abhängigkeiten installieren
+```bash
 pip install -r requirements.txt
+```
 
 ### 4) Datenbank initialisieren
+```bash
 python scripts/init_db.py
+```
 
 ### 5) Anwendung starten
+```bash
 uvicorn src.app:app --reload
+```
 
 Standardmäßig ist die API unter:
 
