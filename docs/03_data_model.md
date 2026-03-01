@@ -91,6 +91,7 @@ purpose wird zusätzlich in details_json präzisiert, um eindeutig zwischen obje
 
 Beispiel für POST /objects:
 
+```json
 {
   "payload": {
     "antrag_id": "BG-2026-000123",
@@ -103,6 +104,7 @@ Beispiel für POST /objects:
   "owner": null,
   "lineage_ref": null
 }
+```
 
 ---
 
@@ -112,6 +114,7 @@ Beispiel für POST /objects:
 
 Beispiel-Eintrag (audit_events):
 
+```json
 {
   "event_id": "evt_01HXYZ...",
   "ts": "2026-03-01T14:30:12Z",
@@ -129,6 +132,7 @@ Beispiel-Eintrag (audit_events):
     "method": "POST"
   }
 }
+```
 
 ---
 
@@ -136,6 +140,7 @@ Beispiel-Eintrag (audit_events):
 
 Beispiel-Eintrag (audit_events):
 
+```json
 {
   "event_id": "evt_01HABC...",
   "ts": "2026-03-01T14:32:05Z",
@@ -155,6 +160,7 @@ Beispiel-Eintrag (audit_events):
     "object_purpose": "case_processing"
   }
 }
+```
 
 ---
 
@@ -162,6 +168,7 @@ Beispiel-Eintrag (audit_events):
 
 Beispiel-Eintrag (audit_events):
 
+```json
 {
   "event_id": "evt_01HDEF...",
   "ts": "2026-03-01T14:33:40Z",
@@ -181,6 +188,7 @@ Beispiel-Eintrag (audit_events):
     "object_purpose": "case_processing"
   }
 }
+```
 
 ---
 
