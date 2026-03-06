@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from fastapi import Header
 from fastapi import HTTPException
 
+from uuid import uuid4 
+
 from src.models import DataObjectCreate
 from src.models import DataObjectCreated
 
@@ -13,7 +15,10 @@ def create_object(
     x_actor: str = Header(...),
     x_role: str = Header(...)
     ):
+    
+    object_id = str(uuid4())
+
     return DataObjectCreated(
-    object_id="test-id",
-    status="created"
-)
+        object_id = object_id,
+        status= "created"
+    )
