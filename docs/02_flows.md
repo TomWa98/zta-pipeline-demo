@@ -188,7 +188,7 @@ Deny Response (JSON):
 
 ---
 
-## Zusammenfassung: Audit-Events (Minimum)
+## Zusammenfassung: Audit-Events 
 
 - OBJECT_CREATED
   - wird nur bei erfolgreichem Speichern erzeugt
