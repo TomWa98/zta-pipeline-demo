@@ -12,7 +12,8 @@ def insert_data_object(object_id: str, data: DataObjectCreate):
     cursor = conn.cursor()
     payload_json = json.dumps(data.payload)
     created_at = datetime.now(timezone.utc).isoformat()
-    cursor.execute(""" INSERT INTO data_objects (object_id, 
+    cursor.execute(""" INSERT INTO data_objects (
+                   object_id, 
                    payload_json,
                    purpose,
                    policy_version,
