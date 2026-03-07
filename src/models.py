@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from typing import Optional    # erlaubt einen Typ oder None
+from typing import Optional, Literal
 
 
 
@@ -14,7 +15,26 @@ class DataObjectCreate(BaseModel):
     lineage_ref: Optional[str] = None
 
 
-# Output-Model für POST /objects
+# Response-Modell für POST /objects
 class DataObjectCreated(BaseModel):
     object_id: str
     status: str = "created"
+
+
+# Request-Modell für POST /access
+class AccessRequest(BaseModel):
+    object_id: str
+    requested_purpose: str
+
+# Response-Modell für POST /access
+class AccessAllowedResponse(BaseModel):
+    decision: Literal["allow"]
+    object_id: str
+    payload: dict
+
+
+# Response-Modell für POST /access
+class AccessDeniedResponse(BaseModel):
+    decision: Literal["deny"]
+    object_id: str
+    reason: str
