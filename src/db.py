@@ -45,3 +45,24 @@ def insert_data_object(object_id: str, data: DataObjectCreate) -> None:
     # Transaktion abschließen und Verbindung schließen
     conn.commit()
     conn.close()
+
+def load_data_object(object_id: str):
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute("""SELECT object_id, payload_json, purpose, policy_version
+                   FROM data_objects
+                   WHERE object_id = ?
+                   """, (object_id,))
+    row = cursor.fetchone()
+    if row is None:
+        conn.close()
+        return None
+    payload = json.loads(row[1])
+    result = {
+        "object_id": row[0],
+        "payload": payload,
+        "purpose": row[2],
+        "policy_version": row[3]
+    }
+    conn.close()
+    return result

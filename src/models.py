@@ -1,6 +1,6 @@
 from pydantic import BaseModel
-from typing import Optional    # erlaubt einen Typ oder None
-from typing import Optional, Literal
+from typing import Optional, Literal    # erlaubt einen Typ oder None
+
 
 
 
