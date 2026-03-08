@@ -1,3 +1,6 @@
+# Policy Decision Point
+# Bewertet eine Zugriffsanfrage anhand von Rolle und Zweckbindung
+
 def evaluate_policy(
         role: str,
         requested_purpose: str,
@@ -5,8 +8,10 @@ def evaluate_policy(
         policy_version: str
         ):
 
+    # Regel 1: Analyst darf nur auf Analytics-Daten für Analytics-Zwecke zugreifen
     if role == "analyst":
-
+        
+        # Zweck der Anfrage muss mit Zweck des Datenobjekt überein stimmen
         if requested_purpose == "analytics" and object_purpose == "analytics":
 
             return {
@@ -15,6 +20,7 @@ def evaluate_policy(
                 "policy_version": policy_version
             }
 
+        # Zweck stimmt nicht überein -> Zugriff verweigern
         else:
 
             return {
@@ -22,7 +28,8 @@ def evaluate_policy(
                 "reason": "purpose_mismatch",
                 "policy_version": policy_version
             }
-        
+
+    # Regel 2: Support darf nur auf Support-Daten für Support-Zwecke zugreifen   
     elif role == "support":
 
         if requested_purpose == "support" and object_purpose == "support":
@@ -41,6 +48,7 @@ def evaluate_policy(
                 "policy_version": policy_version
             }
     
+    # Regel 3: Gäste haben grundsätzlich keinen Zugriff
     elif role == "guest":
 
         return {
@@ -49,6 +57,7 @@ def evaluate_policy(
             "policy_version": policy_version
         }
     
+    # Default-Regel: unbekannte Rollen werden abgelehnt (deny-by-default)
     else:
 
         return {
