@@ -65,7 +65,7 @@ Request Body (JSON):
 1) Validate
 - Request wird gegen das DataObject-Model validiert
 - payload, purpose und policy_version müssen vorhanden sein
-- Bei Validierungsfehler: 400
+- Bei Validierungsfehler: 422
 
 2) Store
 - DataObject wird in SQLite in data_objects gespeichert
@@ -134,7 +134,6 @@ Request Body (JSON):
 
 3) Evaluate Policy (PDP)
 - policy.py wird aufgerufen mit:
-  - actor
   - role
   - requested_purpose
   - object_purpose (aus data_objects)

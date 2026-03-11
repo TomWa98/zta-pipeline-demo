@@ -1,4 +1,4 @@
-evaluation_md = """
+
 # 05_evaluation.md — Evaluation (Evidence Plan)
 
 ## Zweck dieses Dokuments
@@ -238,4 +238,3 @@ Die Demonstration gilt als erfolgreich, wenn:
 5. decision, reason und policy_version sind korrekt in audit_events gespeichert.
 
 Damit ist Zweckbindung und Auditierbarkeit technisch nachgewiesen.
-"""
